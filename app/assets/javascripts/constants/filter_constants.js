@@ -1,0 +1,4 @@
+FilterConstants = {
+  ADD_PARAMS: 'ADD_PARAMS',
+  REMOVE_PARAMS: 'REMOVE_PARAMS'
+};

@@ -16,7 +16,7 @@ $(function() {
   });
   var routes = (
     <Route path="/" component={App}>
-       
+       <IndexRoute component={Search}/>
     </Route>
   );
   React.render(
