@@ -21,12 +21,6 @@ var Search = React.createClass({
     return (
       <div>
         <NavBar/>
-        <div className="container">
-          Tag: { this.state.filterParams.query }
-          <br/>
-          From: { this.state.filterParams.startTime } - { this.state.filterParams.endTime }
-
-        </div>
         <SearchForm/>
         <PhotoIndex/>
       </div>

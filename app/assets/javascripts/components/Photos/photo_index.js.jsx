@@ -19,7 +19,7 @@ var PhotoIndex = React.createClass({
     var idx = 0;
 
     return (
-      <div className="container">
+      <div className="container photo-index">
         {
           this.state.photos.map(function(photo) {
             idx++;

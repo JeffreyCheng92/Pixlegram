@@ -7,12 +7,12 @@ var SearchForm = React.createClass({
     var endTime = React.findDOMNode(this.refs.endTime).value.trim();
 
     ApiUtil.addParam({ query: query, startTime: startTime, endTime: endTime });
-    this.clearInputs();
   },
 
-  _clickHandler: function(event) {
+  _resetHandler: function(event) {
     event.preventDefault();
     ApiUtil.resetPhotos();
+    this.clearInputs();
   },
 
   clearInputs: function() {
@@ -23,9 +23,9 @@ var SearchForm = React.createClass({
 
   render: function() {
     return(
-      <div className="container">
+      <div className="container query-form clearfix">
         <form onSubmit={this._submitHandler} className="col-md-12 form-inline">
-          <fieldset className="form-group col-md-3">
+          <fieldset className="form-group col-md-3 query-field">
             <label>Filter by hashtag: </label>
             <input type="text"
                    className="form-control"
@@ -33,14 +33,14 @@ var SearchForm = React.createClass({
                    placeholder="Eg. puppies"/>
           </fieldset>
 
-          <fieldset className="form-group col-md-3">
+          <fieldset className="form-group col-md-3 query-field">
             <label>Starting Date: </label>
             <input type="date"
                    className="form-control"
                    ref='startTime'/>
           </fieldset>
 
-          <fieldset className="form-group col-md-3">
+          <fieldset className="form-group col-md-3 query-field">
             <label>Ending Date: </label>
             <input type="date"
                    className="form-control"
@@ -51,9 +51,11 @@ var SearchForm = React.createClass({
             <input type='submit'
                    className="btn btn-default"
                    value="Search"/>
+            <button className="btn btn-danger pull-right"
+                    onClick={this._resetHandler}> Reset! </button>
           </fieldset>
         </form>
-        <button onClick={this._clickHandler}> Reset! </button>
+
       </div>
     );
   }

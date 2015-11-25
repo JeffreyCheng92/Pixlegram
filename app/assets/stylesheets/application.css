@@ -19,13 +19,13 @@
   min-height: 60px;
   margin-bottom: 20px;
   border: 1px solid transparent;
-  background-color: grey;
+  background-color: #125688;
 }
 
 .navbar-logo {
   float: left;
   height: 50px;
-  padding: 20px 15px;
+  padding: 22px 15px;
   line-height: 20px;
   font-size: 36px;
   font-family: cursive;
@@ -44,6 +44,22 @@
   cursor: pointer;
 }
 
+.query-form {
+  position: relative;
+  top: -20px;
+  background-color: #125688;
+  border-radius: 0px 0px 3px 3px;
+}
+
+.query-field {
+  padding-top: 10px;
+  padding-bottom: 15px;
+}
+
 .query-btn {
   top: 15px;
+}
+
+.photo-index {
+  background-color: #125688;
 }
