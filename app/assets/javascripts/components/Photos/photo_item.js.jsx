@@ -1,10 +1,4 @@
 var Photo = React.createClass({
-  mixins: [ReactRouter.History],
-
-  _clickHandler: function() {
-    // make modal here
-  },
-
   _profileHandler: function(event) {
     event.preventDefault();
     var url = event.currentTarget.href;
