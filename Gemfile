@@ -19,8 +19,8 @@ gem 'httparty'
 gem 'figaro'
 
 # Use React.js as front end framework
-gem 'react-rails', '~> 1.3.0'
-gem 'flux-rails-assets', '~> 2.1.0'
+gem 'react-rails'
+gem 'flux-rails-assets'
 
 # Use jquery as the JavaScript library
 gem 'jquery-rails'
