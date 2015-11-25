@@ -1,3 +1,4 @@
 PhotoConstants = {
   PHOTOS_RECEIVED: 'PHOTOS_RECEIVED',
+  PHOTOS_EMPTY: 'PHOTOS_EMPTY',
 };

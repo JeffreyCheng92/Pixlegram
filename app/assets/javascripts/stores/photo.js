@@ -7,9 +7,13 @@
     PhotoStore.emit(CHANGE_EVENT);
   };
 
+  var emptyPhotos = function() {
+    _photos = [];
+    PhotoStore.emit(CHANGE_EVENT);
+  };
+
   root.PhotoStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
-      debugger
       return _photos.slice(0);
     },
 
@@ -26,6 +30,9 @@
 
         case PhotoConstants.PHOTOS_RECEIVED:
           resetPhotos(payload.photos);
+          break;
+        case PhotoConstants.PHOTOS_EMPTY:
+          emptyPhotos();
           break;
         default:
           // No-op

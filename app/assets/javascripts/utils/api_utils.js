@@ -17,4 +17,8 @@ ApiUtil = {
       }
     });
   },
+
+  resetPhotos: function() {
+    PhotoActions.resetPhotos();
+  },
 };

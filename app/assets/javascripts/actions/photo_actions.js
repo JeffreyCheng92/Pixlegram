@@ -5,4 +5,10 @@ PhotoActions = {
       photos: photos
     });
   },
+
+  resetPhotos: function() {
+    AppDispatcher.dispatch({
+      actionType: PhotoConstants.PHOTOS_EMPTY,
+    });
+  },
 };
