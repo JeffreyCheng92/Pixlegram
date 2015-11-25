@@ -1,5 +1,6 @@
 (function(root){
   var _photos = [];
+  var _nextUrl = "";
   var CHANGE_EVENT = "change";
 
   var resetPhotos = function(photos) {
@@ -10,6 +11,10 @@
   var emptyPhotos = function() {
     _photos = [];
     PhotoStore.emit(CHANGE_EVENT);
+  };
+
+  var setNextPage = function(url) {
+    _nextUrl = url;
   };
 
   root.PhotoStore = $.extend({}, EventEmitter.prototype, {
@@ -29,7 +34,8 @@
       switch(payload.actionType) {
 
         case PhotoConstants.PHOTOS_RECEIVED:
-          resetPhotos(payload.photos);
+          resetPhotos(payload.photos.data);
+          setNextPage(payload.photos.pagination.next_url);
           break;
         case PhotoConstants.PHOTOS_EMPTY:
           emptyPhotos();
