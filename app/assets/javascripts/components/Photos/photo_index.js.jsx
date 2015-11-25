@@ -16,12 +16,22 @@ var PhotoIndex = React.createClass({
   },
 
   render: function() {
+    var idx = 0;
+
     return (
       <div>
         {
-          this.state.photos.map(function(photo, idx) {
+          this.state.photos.map(function(photo) {
+            idx++;
             return (
-              <Photo photo={photo} key={idx} />
+              <Photo caption={photo.caption}
+                     comments={photo.comments.data}
+                     tags={photo.tags}
+                     url={photo.images.standard_resolution.url}
+                     likes={photo.likes.count}
+                     user={photo.user.username}
+                     idx={idx}
+                     key={idx} />
             );
           })
         }

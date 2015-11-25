@@ -6,11 +6,18 @@ var Photo = React.createClass({
   },
 
   render: function() {
-    var photo = this.props.photo;
+    var caption = this.props.caption;
+    var comments = this.props.comments;
+    var tags = this.props.tags;
+    var url = this.props.url;
+    var likes = this.props.likes;
+    var user = this.props.user;
+    var idx = this.props.idx;
 
     return (
       <div onClick={this._clickHandler}>
-        { photo }
+        {idx}. User: { user }
+        <br/>
       </div>
     );
   }
