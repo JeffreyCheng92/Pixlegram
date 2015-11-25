@@ -18,20 +18,25 @@ var Photo = React.createClass({
     var media;
 
     if (this.props.video) {
-      Media = React.createElement('video', { src: vid_url, className: media });
+      return (
+        <div className="photo-item">
+          <video src={vid_url.url} controls/>
+          <br/>
+          <a onClick={this._profileHandler} href={account}> {user} </a>
+          <br/>
+          <div> { caption } </div>
+        </div>
+      );
     } else {
-      Media = React.createElement('img', { src: vid_url, className: media });
+      return (
+        <div className="photo-item">
+          <img src={url}/>
+          <br/>
+          <a onClick={this._profileHandler} href={account}> {user} </a>
+          <br/>
+          <div> { caption } </div>\
+        </div>
+      );
     }
-
-    return (
-      <div className="photo-item">
-        <Media/>
-        <br/>
-        <a onClick={this._profileHandler} href={account}> {user} </a>
-        <br/>
-        <div> { caption } </div>
-        <br/>
-      </div>
-    );
   }
 });
