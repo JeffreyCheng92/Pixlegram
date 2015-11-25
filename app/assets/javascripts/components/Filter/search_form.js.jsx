@@ -1,13 +1,13 @@
 var SearchForm = React.createClass({
   _submitHandler: function(event) {
     event.preventDefault();
-    
+
     var query = React.findDOMNode(this.refs.query).value.trim();
     var startTime = React.findDOMNode(this.refs.startTime).value.trim();
     var endTime = React.findDOMNode(this.refs.endTime).value.trim();
 
-    this.clearInputs();
     ApiUtil.addParam({ query: query, startTime: startTime, endTime: endTime });
+    this.clearInputs();
   },
 
   _clickHandler: function(event) {
@@ -18,7 +18,7 @@ var SearchForm = React.createClass({
   clearInputs: function() {
     React.findDOMNode(this.refs.query).value = "";
     React.findDOMNode(this.refs.startTime).value = "";
-    React.findDOMNode(this.refs.endTIme).value = "";
+    React.findDOMNode(this.refs.endTime).value = "";
   },
 
   render: function() {
