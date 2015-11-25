@@ -24,7 +24,7 @@ var PhotoIndex = React.createClass({
           this.state.photos.map(function(photo) {
             idx++;
             return (
-              <Photo caption={photo.caption}
+              <Photo caption={photo.caption.text}
                      comments={photo.comments.data}
                      tags={photo.tags}
                      url={photo.images.standard_resolution.url}

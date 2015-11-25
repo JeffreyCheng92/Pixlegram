@@ -20,7 +20,12 @@ var Search = React.createClass({
   render: function() {
     return (
       <div>
-        <div> Current filter: { this.state.filterParams.query } </div>
+        <div>
+          Tag: { this.state.filterParams.query }
+          <br/>
+          From: { this.state.filterParams.startTime } - { this.state.filterParams.endTime }
+
+        </div>
         <SearchForm/>
         <PhotoIndex/>
       </div>
