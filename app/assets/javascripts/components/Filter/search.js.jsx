@@ -13,7 +13,7 @@ var Search = React.createClass({
 
   _onChange: function(event) {
     this.setState({ filterParams: FilterStore.all() }, function() {
-      ApiUtil.fetchBenches(this.state.filterParams);
+      ApiUtil.fetchPhotos(this.state.filterParams);
     });
   },
 
@@ -21,6 +21,7 @@ var Search = React.createClass({
     return (
       <div>
         <SearchForm/>
+        <PhotoIndex/>
       </div>
     );
   }
