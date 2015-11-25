@@ -61,5 +61,25 @@
 }
 
 .photo-index {
+  position: relative;
+  top: -20px;
   background-color: #125688;
+  text-align: center;
+}
+
+.photo-item {
+  max-width: 800px;
+  background-color: white;
+  border-bottom: 1px solid black;
+  margin: 0 auto;
+  word-wrap: break-word;
+  padding-top: 5px;
+}
+
+.photo-item:first-child {
+  border-radius: 3px 3px 0 0;
+}
+
+.photo-item:last-child {
+  border-radius: 0 0 3px 3px;
 }

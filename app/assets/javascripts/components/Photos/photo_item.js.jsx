@@ -16,8 +16,8 @@ var Photo = React.createClass({
     var idx = this.props.idx;
 
     return (
-      <div>
-        <img src={ url } />
+      <div className="photo-item">
+        <img src={url} className="image"/>
         <br/>
         <a onClick={this._profileHandler} href={account}> {user} </a>
         <br/>
