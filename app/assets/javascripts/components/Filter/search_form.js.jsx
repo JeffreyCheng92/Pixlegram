@@ -23,18 +23,35 @@ var SearchForm = React.createClass({
 
   render: function() {
     return(
-      <div>
-        <form onSubmit={this._submitHandler}>
-          <label> Photo Filter: </label>
-          <input type="text" ref='query'/>
-          <br/>
-          <label> Start Date: </label>
-          <input type='date' ref='startTime'/>
-          <br/>
-          <label> End Date: </label>
-          <input type='date' ref='endTime'/>
-          <br/>
-          <input type='submit' value="Search"/>
+      <div className="container">
+        <form onSubmit={this._submitHandler} className="col-md-12 form-inline">
+          <fieldset className="form-group col-md-3">
+            <label>Filter by hashtag: </label>
+            <input type="text"
+                   className="form-control"
+                   ref='query'
+                   placeholder="Eg. puppies"/>
+          </fieldset>
+
+          <fieldset className="form-group col-md-3">
+            <label>Starting Date: </label>
+            <input type="date"
+                   className="form-control"
+                   ref='startTime'/>
+          </fieldset>
+
+          <fieldset className="form-group col-md-3">
+            <label>Ending Date: </label>
+            <input type="date"
+                   className="form-control"
+                   ref='endTime'/>
+          </fieldset>
+
+          <fieldset className='form-group col-md-3 query-btn'>
+            <input type='submit'
+                   className="btn btn-default"
+                   value="Search"/>
+          </fieldset>
         </form>
         <button onClick={this._clickHandler}> Reset! </button>
       </div>

@@ -20,7 +20,8 @@ var Search = React.createClass({
   render: function() {
     return (
       <div>
-        <div>
+        <NavBar/>
+        <div className="container">
           Tag: { this.state.filterParams.query }
           <br/>
           From: { this.state.filterParams.startTime } - { this.state.filterParams.endTime }
