@@ -2,9 +2,7 @@ var SearchForm = React.createClass({
   _submitHandler: function(event) {
     event.preventDefault();
     var params = React.findDOMNode(this.refs.query).value.trim();
-    if (params.trim() !== "") {
-      ApiUtil.addParam({ query: params });
-    }
+    ApiUtil.addParam({ query: params });
   },
 
   render: function() {

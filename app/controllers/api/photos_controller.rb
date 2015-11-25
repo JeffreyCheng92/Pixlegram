@@ -2,11 +2,14 @@ class Api::PhotosController < ApplicationController
 
   def index
     key = ENV['INSTA_API_KEY']
-    tag = params[:query]
-    url = "https://api.instagram.com/v1/tags/#{tag}/media/recent?access_token=#{key}"
+    tag = params[:query].strip
+    response = []
 
-    response = JSON.parse(HTTParty.get(url).body)["data"]
+    if !tag.empty?
+      url = "https://api.instagram.com/v1/tags/#{tag}/media/recent?access_token=#{key}"
+      response = JSON.parse(HTTParty.get(url).body)["data"]
+    end
 
-    render json: { photos: response }
+    render json: response
   end
 end

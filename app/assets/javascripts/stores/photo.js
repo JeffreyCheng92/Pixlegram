@@ -9,6 +9,7 @@
 
   root.PhotoStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
+      debugger
       return _photos.slice(0);
     },
 
