@@ -3,11 +3,11 @@ ApiUtil = {
     FilterActions.addParam(data);
   },
 
-  fetchPhotos: function(data) {
+  fetchPhotos: function(query) {
     $.ajax({
       type: 'GET',
       url: '/api/photos',
-      query: data,
+      data: query,
       dataType: "json",
       success: function(photos){
         PhotoActions.receiveAll(photos);

@@ -1,11 +1,11 @@
 class Api::PhotosController < ApplicationController
   def index
     key = ENV['INSTA_API_KEY']
+    tag = params[:query]
+    url = "https://api.instagram.com/v1/tags/#{tag}/media/recent?access_token=#{key}"
 
-    # 20053539.1677ed0.7be58e63adbb42c3ad1c9f955ee069da
+    response = HTTParty.get(url)
 
-    # https://api.instagram.com/v1/tags/{tag- name}/media/recent?access_token=ACCESS-TOKEN
-
-    debugger
+    fail
   end
 end
