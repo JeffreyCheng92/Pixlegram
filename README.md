@@ -1,8 +1,7 @@
 
-# Pixlegram
-## Your friendly neighborhood instagram searcher
+# Pixlegram - Your Friendly Instagram Searcher
 
-[Live link](pixlegram.herokuapp.com)
+[Live link](http://pixlegram.herokuapp.com)
 
 ## Description
 
