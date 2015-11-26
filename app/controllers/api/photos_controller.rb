@@ -1,5 +1,4 @@
 class Api::PhotosController < ApplicationController
-
   def index
     key = ENV['INSTA_API_KEY']
     tag = params[:query].strip
@@ -48,7 +47,13 @@ class Api::PhotosController < ApplicationController
 
   def timestampify(date)
     date_arr = date.split("-").map(&:to_i)
-    Date.new(date_arr[0], date_arr[1], date_arr[2]).to_time.to_i
+    date = Date.new(date_arr[0], date_arr[1], date_arr[2])
+
+    if date > Date.today
+      return Date.today.to_time.to_i
+    else
+      return date.to_time.to_i
+    end
   end
 
   def create_image(image, search_session_token)
