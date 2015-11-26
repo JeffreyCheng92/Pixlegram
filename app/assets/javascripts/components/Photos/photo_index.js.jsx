@@ -61,22 +61,12 @@ var PhotoIndex = React.createClass({
     var video;
     return (
       <div>
-        <div className="container page-button">
-          <div className="col-md-4 text-center">
-            <button className='btn btn-default'
-                    disabled={this.disableBack()}
-                    onClick={this._clickBackward}> Back </button>
-          </div>
-          <div className="col-md-4 text-center">
-            <button className="btn btn-danger"
-                    onClick={this._resetHandler}> Clear! </button>
-          </div>
-          <div className="col-md-4 text-center">
-            <button className='btn btn-default'
-                    disabled={this.disableForward()}
-                    onClick={this._clickForward}> Forward </button>
-          </div>
-        </div>
+        <PhotoNav disableBack={this.disableBack}
+                  disableForward={this.disableForward}
+                  _clickBackward={this._clickBackward}
+                  _clickForward={this._clickForward}
+                  _resetHandler={this._resetHandler} />
+
         <div className="photo-index container">
           {
             this.state.photos.map(function(photo) {
@@ -87,16 +77,16 @@ var PhotoIndex = React.createClass({
               }
               return (
                 <Photo caption={photo.caption.text}
-                         comments={photo.comments.data}
-                         instalink={photo.link}
-                         tags={photo.tags}
-                         url={photo.images.standard_resolution.url}
-                         likes={photo.likes.count}
-                         user={photo.user.username}
-                         idx={idx}
-                         vid_url={photo.videos.standard_resolution}
-                         video={video}
-                         key={idx} />
+                       comments={photo.comments.data}
+                       instalink={photo.link}
+                       tags={photo.tags}
+                       url={photo.images.standard_resolution.url}
+                       likes={photo.likes.count}
+                       user={photo.user.username}
+                       idx={idx}
+                       vid_url={photo.videos.standard_resolution}
+                       video={video}
+                       key={idx} />
               );
             })
           }

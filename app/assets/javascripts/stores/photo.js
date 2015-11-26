@@ -1,4 +1,4 @@
-(function(root){
+(function(root) {
   var _photos = [];
   var _nextUrl = "";
   var _searchSession = "";
