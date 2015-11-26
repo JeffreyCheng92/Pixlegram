@@ -33,6 +33,14 @@
       return _photos.slice(0);
     },
 
+    nextUrl: function() {
+      return _nextUrl;
+    },
+
+    searchSession: function() {
+      return _searchSession;
+    },
+
     addChangeListener: function(callback) {
       this.on(CHANGE_EVENT, callback);
     },

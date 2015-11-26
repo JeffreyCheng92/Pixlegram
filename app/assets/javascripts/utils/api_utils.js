@@ -21,4 +21,20 @@ ApiUtil = {
   resetPhotos: function() {
     PhotoActions.resetPhotos();
   },
+
+  nextPhotos: function() {
+    $.ajax({
+      type: 'GET',
+      url: '/api/next',
+      data: { url: PhotoStore.nextUrl(),
+              searchSession: PhotoStore.searchSession() },
+      dataType: "json",
+      success: function(photos) {
+        PhotoActions.receiveAll(photos);
+      },
+      error: function() {
+        debugger;
+      }
+    });
+  }
 };

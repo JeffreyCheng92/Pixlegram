@@ -23,6 +23,12 @@ var PhotoIndex = React.createClass({
     return (this.state.photos.length === 0);
   },
 
+  _clickForward: function(event) {
+    event.preventDefault();
+    this.setState({ page: this.state.page + 1 });
+    ApiUtil.nextPhotos();
+  },
+
   render: function() {
     var idx = 0;
     var video;
@@ -35,7 +41,8 @@ var PhotoIndex = React.createClass({
           </div>
           <div className="col-md-6 text-center">
             <button className='btn btn-default'
-                    disabled={this.disableForward()}> Forward </button>
+                    disabled={this.disableForward()}
+                    onClick={this._clickForward}> Forward </button>
           </div>
         </div>
         <div className="photo-index container">
