@@ -17,6 +17,7 @@ class Api::PhotosController < ApplicationController
     end
 
     search_session = SecureRandom.urlsafe_base64
+    response['search_session'] = search_session
 
     response['data'].each do |image|
       create_image(image, search_session)
