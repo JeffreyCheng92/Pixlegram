@@ -11,6 +11,11 @@
     PhotoStore.emit(CHANGE_EVENT);
   };
 
+  var displayPhotos = function(photos) {
+    _photos = photos;
+    PhotoStore.emit(CHANGE_EVENT);
+  };
+
   var emptyPhotos = function() {
     _photos = [];
     emptyCollection();
@@ -31,6 +36,10 @@
   root.PhotoStore = $.extend({}, EventEmitter.prototype, {
     all: function() {
       return _photos.slice(0);
+    },
+
+    allCollection: function() {
+      return _photoCollection.slice(0);
     },
 
     nextUrl: function() {
@@ -61,6 +70,10 @@
           break;
         case PhotoConstants.PHOTOS_EMPTY:
           emptyPhotos();
+          break;
+        case PhotoConstants.PHOTOS_SEARCH:
+          var idx = payload.page * 20;
+          displayPhotos(PhotoStore.allCollection().slice(idx, idx + 20));
           break;
         default:
           // No-op

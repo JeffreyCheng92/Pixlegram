@@ -30,7 +30,6 @@ class Api::PhotosController < ApplicationController
     url = params[:url]
     search_session = params[:searchSession]
 
-    # fail
     response = []
 
     if url

@@ -36,5 +36,10 @@ ApiUtil = {
         debugger;
       }
     });
-  }
+  },
+
+  searchPhotos: function(page) {
+    PhotoActions.searchPhotos(page);
+  },
+
 };

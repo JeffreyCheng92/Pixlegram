@@ -9,18 +9,6 @@ var SearchForm = React.createClass({
     ApiUtil.addParam({ query: query, startTime: startTime, endTime: endTime });
   },
 
-  _resetHandler: function(event) {
-    event.preventDefault();
-    ApiUtil.resetPhotos();
-    this.clearInputs();
-  },
-
-  clearInputs: function() {
-    React.findDOMNode(this.refs.query).value = "";
-    React.findDOMNode(this.refs.startTime).value = "";
-    React.findDOMNode(this.refs.endTime).value = "";
-  },
-
   render: function() {
     return(
       <div className="container query-form clearfix">
@@ -51,8 +39,6 @@ var SearchForm = React.createClass({
             <input type='submit'
                    className="btn btn-default"
                    value="Search"/>
-            <button className="btn btn-danger pull-right"
-                    onClick={this._resetHandler}> Reset! </button>
           </fieldset>
         </form>
 

@@ -50,6 +50,10 @@
   background-color: #125688;
 }
 
+.form-inline {
+  left: 75px;
+}
+
 .query-field {
   padding-top: 10px;
   padding-bottom: 15px;

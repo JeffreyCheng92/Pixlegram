@@ -1,6 +1,6 @@
 var PhotoIndex = React.createClass({
   getInitialState: function() {
-    return { photos: PhotoStore.all(), page: 1 };
+    return { photos: PhotoStore.all(), page: 0, visited: [0] };
   },
 
   componentDidMount: function() {
@@ -16,7 +16,7 @@ var PhotoIndex = React.createClass({
   },
 
   disableBack: function() {
-    return (this.state.page === 1);
+    return (this.state.page === 0);
   },
 
   disableForward: function() {
@@ -25,8 +25,39 @@ var PhotoIndex = React.createClass({
 
   _clickForward: function(event) {
     event.preventDefault();
-    this.setState({ page: this.state.page + 1 });
-    ApiUtil.nextPhotos();
+    console.log(this.state.page);
+    console.log(this.state.visited);
+    var next_page = this.state.page + 1;
+
+    if (this.state.visited[next_page] === next_page) {
+      this.setState({ page: next_page });
+      ApiUtil.searchPhotos( next_page );
+    } else {
+      this.setState({ page: next_page,
+                      visited: this.state.visited.concat(next_page) });
+      ApiUtil.nextPhotos();
+    }
+  },
+
+  _clickBackward: function(event) {
+    event.preventDefault();
+    console.log(this.state.page);
+    console.log(this.state.visited);
+    var prev_page = this.state.page - 1;
+
+    this.setState({ page: prev_page });
+    ApiUtil.searchPhotos( prev_page );
+  },
+
+  _resetHandler: function(event) {
+    event.preventDefault();
+    this.setState({ page: 0, visited: [0] });
+    ApiUtil.resetPhotos();
+    this.clearInputs();
+  },
+
+  clearInputs: function() {
+    $('.form-control').val('');
   },
 
   render: function() {
@@ -35,11 +66,16 @@ var PhotoIndex = React.createClass({
     return (
       <div>
         <div className="container page-button">
-          <div className="col-md-6 text-center">
+          <div className="col-md-4 text-center">
             <button className='btn btn-default'
-                    disabled={this.disableBack()}> Back </button>
+                    disabled={this.disableBack()}
+                    onClick={this._clickBackward}> Back </button>
           </div>
-          <div className="col-md-6 text-center">
+          <div className="col-md-4 text-center">
+            <button className="btn btn-danger"
+                    onClick={this._resetHandler}> Clear! </button>
+          </div>
+          <div className="col-md-4 text-center">
             <button className='btn btn-default'
                     disabled={this.disableForward()}
                     onClick={this._clickForward}> Forward </button>

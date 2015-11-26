@@ -11,4 +11,11 @@ PhotoActions = {
       actionType: PhotoConstants.PHOTOS_EMPTY,
     });
   },
+
+  searchPhotos: function(page) {
+    AppDispatcher.dispatch({
+      actionType: PhotoConstants.PHOTOS_SEARCH,
+      page: page
+    });
+  },
 };
