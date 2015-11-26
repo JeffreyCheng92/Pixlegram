@@ -15,6 +15,6 @@ class CreateImages < ActiveRecord::Migration
       t.timestamps null: false
     end
 
-    add_index :images :search_session
+    add_index :images, :search_session
   end
 end
