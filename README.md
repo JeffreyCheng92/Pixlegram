@@ -24,4 +24,4 @@ Simply type in the *hashtag* you want to search for, provide the date range you 
 * Image data stored in a permanent Postgresql server
 * Minimizes API usage by storing images within the same search session on client side during pagination (similar to Backbone.js' collection object)
   * Front end: Navigate via pagination without hitting API unless you need new pictures
-  * Back end: Minimizes hitting Instagram API to avoid rate limit on token
+  * Back end: Minimizes hitting Instagram API to avoid rate limit on token and date ranges into the future default to most recent media
