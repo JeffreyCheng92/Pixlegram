@@ -26,6 +26,7 @@ var PhotoIndex = React.createClass({
   _clickForward: function(event) {
     event.preventDefault();
     var next_page = this.state.page + 1;
+    $(".photo-index").animate({ scrollTop: 0 }, "fast");
 
     if (this.state.visited[next_page] === next_page) {
       this.setState({ page: next_page });
@@ -40,6 +41,7 @@ var PhotoIndex = React.createClass({
   _clickBackward: function(event) {
     event.preventDefault();
     var prev_page = this.state.page - 1;
+    $(".photo-index").animate({ scrollTop: 0 }, "fast");
 
     this.setState({ page: prev_page });
     ApiUtil.searchPhotos( prev_page );
@@ -60,7 +62,7 @@ var PhotoIndex = React.createClass({
     var idx = 0;
     var video;
     return (
-      <div>
+      <div className="photo-div">
         <PhotoNav disableBack={this.disableBack}
                   disableForward={this.disableForward}
                   _clickBackward={this._clickBackward}

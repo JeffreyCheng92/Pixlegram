@@ -66,10 +66,15 @@
   top: 35px;
 }
 
-.page-button {
+.photo-div {
   position: relative;
-  top: -20px;
+}
+
+.page-button {
+  position: absolute;
+  left: 9.4%;
   background-color: #125688;
+  top: -20px;
   padding: 10px 0px 10px 0px;
 }
 
@@ -78,7 +83,9 @@
   background-color: #125688;
   text-align: center;
   padding: 10px 0px 10px 0px;
-  top: -20px;
+  top: 34px;
+  height: 75vh;
+  overflow-y: auto;
 }
 
 .photo-item {
