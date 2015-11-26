@@ -48,7 +48,6 @@
   position: relative;
   top: -20px;
   background-color: #125688;
-  border-radius: 0px 0px 3px 3px;
 }
 
 .query-field {
@@ -57,7 +56,7 @@
 }
 
 .query-btn {
-  top: 15px;
+  top: 35px;
 }
 
 .page-button {
@@ -71,6 +70,8 @@
   position: relative;
   background-color: #125688;
   text-align: center;
+  padding: 10px 0px 10px 0px;
+  top: -20px;
 }
 
 .photo-item {
@@ -79,7 +80,7 @@
   border-bottom: 1px solid black;
   margin: 0 auto;
   word-wrap: break-word;
-  padding-top: 5px;
+  padding: 10px 0px 10px 0px;
 }
 
 .photo-item:first-child {
