@@ -88,6 +88,7 @@ var PhotoIndex = React.createClass({
               return (
                 <Photo caption={photo.caption.text}
                          comments={photo.comments.data}
+                         instalink={photo.link}
                          tags={photo.tags}
                          url={photo.images.standard_resolution.url}
                          likes={photo.likes.count}

@@ -13,6 +13,7 @@ var Photo = React.createClass({
     var vid_url = this.props.vid_url;
     var likes = this.props.likes;
     var user = this.props.user;
+    var link = this.props.instalink;
     var account = "https://www.instagram.com/" + user;
     var idx = this.props.idx;
     var media;
@@ -22,6 +23,7 @@ var Photo = React.createClass({
         <div className="photo-item">
           <video src={vid_url.url} controls/>
           <br/>
+          // PUT THE SOURCE LINK HERE
           <a onClick={this._profileHandler} href={account}> {user} </a>
           <br/>
           <div> { caption } </div>
