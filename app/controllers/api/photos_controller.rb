@@ -27,8 +27,22 @@ class Api::PhotosController < ApplicationController
   end
 
   def next
+    url = params[:url]
+    search_session = params[:searchSession]
 
+    # fail
+    response = []
 
+    if url
+      response = JSON.parse(HTTParty.get(url).body)
+      response['search_session'] = search_session
+
+      response['data'].each do |image|
+        create_image(image, search_session)
+      end
+    end
+
+    render json: response
   end
 
   private
