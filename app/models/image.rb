@@ -18,4 +18,6 @@
 #
 
 class Image < ActiveRecord::Base
+  validates :username, :image_url, :timestamp, :caption, :likes,
+            :comment_count, :search_session, presence: true
 end
