@@ -62,6 +62,8 @@ GEM
       thor (~> 0.14)
     flux-rails-assets (2.1.0)
       railties (>= 3.1)
+    font-awesome-sass (4.4.0)
+      sass (>= 3.2)
     globalid (0.3.6)
       activesupport (>= 4.1.0)
     httparty (0.13.5)
@@ -162,6 +164,7 @@ DEPENDENCIES
   byebug
   figaro
   flux-rails-assets
+  font-awesome-sass
   httparty
   jquery-rails
   pg

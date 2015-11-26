@@ -16,7 +16,11 @@ gem 'uglifier', '>= 1.3.0'
 # User HTTParty to hit APIs using ruby
 gem 'httparty'
 
+# Figaro for secret storage of API keys
 gem 'figaro'
+
+# Use font awesome as source for favicons  
+gem 'font-awesome-sass'
 
 # Use React.js as front end framework
 gem 'react-rails'

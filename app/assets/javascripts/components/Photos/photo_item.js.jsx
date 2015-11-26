@@ -22,10 +22,24 @@ var Photo = React.createClass({
       return (
         <div className="photo-item">
           <video src={vid_url.url} controls/>
-          <br/>
-          // PUT THE SOURCE LINK HERE
-          <a onClick={this._profileHandler} href={account}> {user} </a>
-          <br/>
+
+          <div className="col-md-12">
+            <div className="col-md-4 pull-left">
+              <i className="fa fa-instagram"></i>
+              <a href={link}> Link </a>
+            </div>
+
+            <div className="col-md-4 text-center">
+              <i className="fa fa-heart"></i> {likes}
+            </div>
+
+            <div className="col-md-4 pull-right">
+              <a onClick={this._profileHandler} href={account}>
+                <i className="fa fa-user"></i> {user}
+              </a>
+            </div>
+          </div>
+
           <div> { caption } </div>
         </div>
       );
@@ -33,10 +47,25 @@ var Photo = React.createClass({
       return (
         <div className="photo-item">
           <img src={url}/>
-          <br/>
-          <a onClick={this._profileHandler} href={account}> {user} </a>
-          <br/>
-          <div> { caption } </div>\
+
+          <div className="col-md-12">
+            <div className="col-md-4 pull-left">
+              <i className="fa fa-instagram"></i>
+              <a href={link}> Source </a>
+            </div>
+
+            <div className="col-md-4 text-center">
+              <i className="fa fa-heart"></i> {likes}
+            </div>
+
+            <div className="col-md-4 pull-right">
+              <a onClick={this._profileHandler} href={account}>
+                <i className="fa fa-user"></i> {user}
+              </a>
+            </div>
+          </div>
+
+          <div> { caption } </div>
         </div>
       );
     }
