@@ -26,6 +26,11 @@ class Api::PhotosController < ApplicationController
     render json: response
   end
 
+  def next
+
+
+  end
+
   private
 
   def timestampify(date)
