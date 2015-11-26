@@ -25,8 +25,6 @@ var PhotoIndex = React.createClass({
 
   _clickForward: function(event) {
     event.preventDefault();
-    console.log(this.state.page);
-    console.log(this.state.visited);
     var next_page = this.state.page + 1;
 
     if (this.state.visited[next_page] === next_page) {
@@ -41,8 +39,6 @@ var PhotoIndex = React.createClass({
 
   _clickBackward: function(event) {
     event.preventDefault();
-    console.log(this.state.page);
-    console.log(this.state.visited);
     var prev_page = this.state.page - 1;
 
     this.setState({ page: prev_page });
