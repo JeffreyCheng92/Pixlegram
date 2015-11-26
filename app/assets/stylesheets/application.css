@@ -60,9 +60,15 @@
   top: 15px;
 }
 
-.photo-index {
+.page-button {
   position: relative;
   top: -20px;
+  background-color: #125688;
+  padding: 10px 0px 10px 0px;
+}
+
+.photo-index {
+  position: relative;
   background-color: #125688;
   text-align: center;
 }
