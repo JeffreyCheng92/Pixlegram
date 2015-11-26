@@ -73,11 +73,10 @@
 }
 
 .page-button {
-  position: absolute;
-  left: 9.4%;
+  position: relative;
   background-color: #125688;
   top: -20px;
-  padding: 10px 0px 10px 0px;
+  padding: 5px 0px 5px 0px;
 }
 
 .photo-index {
@@ -85,8 +84,8 @@
   background-color: #125688;
   text-align: center;
   padding: 10px 0px 10px 0px;
-  top: 34px;
   height: 75vh;
+  top: -20px;
   overflow-y: auto;
 }
 
