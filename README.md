@@ -16,7 +16,7 @@ Simply type in the *hashtag* you want to search for, provide the date range you 
 * Ruby on Rails (including various gem/libraries)
 * Instagram API
 * React.js/Flux (funny how they're both Facebook things)
-* Sorry in advance if that wasn't funny.
+* Sorry in advance if that wasn't funny
 
 ## Features
 
